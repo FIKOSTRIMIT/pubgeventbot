@@ -1,23 +1,14 @@
-# Multi-stage build for small production image
-FROM node:20-alpine AS base
+FROM node:20-alpine
+
 WORKDIR /app
 
-# Install deps only (cached layer)
-FROM base AS deps
-COPY package*.json ./
-RUN npm ci --omit=dev
+# Install dependencies first (cache layer)
+COPY backend/package*.json ./
+RUN npm ci --only=production
 
-# Development stage (with dev deps + watch)
-FROM base AS dev
-COPY package*.json ./
-RUN npm ci
-COPY . .
-EXPOSE 3001
-CMD ["npm", "run", "dev"]
+# Copy source
+COPY backend/ ./
 
-# Production stage
-FROM base AS prod
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
 EXPOSE 3001
-CMD ["npm", "start"]
+
+CMD ["node", "src/index.js"]

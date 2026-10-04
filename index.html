@@ -370,10 +370,10 @@
 
 <div class="spin-toast" id="spinToast"></div>
 
-<!-- Runtime config -->
+<!-- Runtime config (overridden by Cloudflare Pages env var) -->
 <script>
   window.__ENV__ = {
-    API_BASE: 'http://localhost:3001'
+    API_BASE: '__API_BASE__'
   };
 </script>
 <script src="js/script.js"></script>

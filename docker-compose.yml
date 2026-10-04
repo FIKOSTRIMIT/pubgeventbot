@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # Backend API
+  api:
+    build:
+      context: ./backend
+      target: dev
+    container_name: pubg-event-api
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - MODE=mock                    # 'mock' or 'proxy'
+      - CORS_ORIGIN=http://localhost:5173
+      - RATE_LIMIT_MAX=60
+      # Uncomment and set when you have a real Midasbuy API key:
+      # - MODE=proxy
+      # - MIDASBUY_API_KEY=your_x_api_key_here
+      # - MIDASBUY_BASE_URL=https://midasbuy.night-apis.com
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3001/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # Frontend dev server (Vite) - serves the static HTML/CSS/JS
+  web:
+    image: node:20-alpine
+    container_name: pubg-event-web
+    working_dir: /app
+    command: sh -c "npm install -g serve && serve -l 5173 -s ."
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - api
+    restart: unless-stopped
+
+# Run with: docker compose up --build
+# Then open http://localhost:5173
+# API available at http://localhost:3001/api/player/lookup

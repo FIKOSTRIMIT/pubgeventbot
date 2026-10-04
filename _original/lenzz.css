@@ -1,0 +1,265 @@
+.section-login-id-box {
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	padding-top: 15px;
+}
+.section-login-id-box label {
+	color: #fff;
+	font-size: 15px;
+	font-family: selow;
+	text-align: left;
+
+background-image: linear-gradient(to right, #06A8E6, #66000000);
+width: 140px;
+height: auto;
+color: #fff;
+margin-left: 0px;
+padding: 3px;
+border-left: 2px solid #0c7cec;
+}
+.section-login-id-box label img {
+	width: 18px;
+	padding-left: 5px;
+}
+.section-login-id-box-form {
+	width: 100%;
+	height: 45px;
+	margin-top: 15px;
+}
+.section-login-id-box-form input {
+	background: rgba(25, 32, 69, 0.9);
+	width: 85%;
+	height: 100%;
+	padding-left: 15px;
+	color: #fff;
+	font-size: 14px;
+	font-family: selow;
+	text-align: left;
+	border: 1px solid;
+	border-color: hsla(0,0%,100%,.050980392156862744);
+	outline: none;
+	float: left;
+}
+.section-login-id-box-form input::placeholder {
+	color: #5D627C;
+}
+.section-login-id-box-form button {
+	background: #3a7bfc;
+	width: 15%;
+	height: 100%;
+	color: #fff;
+	font-size: 14px;
+	font-family: selow;
+	text-align: center;
+	border: none;
+	outline: none;
+	float: right;
+}
+.section-login-id-box-message {
+	background-image:linear-gradient(180deg,rgba(201,140,101,.15),rgba(176,103,69,.15));
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	padding: 8px;
+	color: #f3b583;
+	font-size: 14px;
+	font-family: selow;
+	text-align: left;
+}
+.item-wrapper {
+	margin-top: 0px;
+}
+.item-content {
+	width: 100%;
+	height: 80px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	border: 1px solid;
+	border: 1px solid #00c4de;
+	display: block;
+}
+.item-content-name {
+	padding-top: 13px;
+	color: #fff;
+	font-size: 14px;
+	font-family: selow;
+	text-align: left;
+}
+.item-content-description {
+    background-image: linear-gradient(to right, #FBDA4D, #66000000);
+	width: auto;
+	height: auto;
+	padding: 2px;
+	color: #fff;
+	font-size: 14px;
+	font-family: selow;
+	text-align: center;
+	float: left;
+    margin-top: 5px;
+    border-left: 2px solid yellow;
+}
+.item-content-description-red {
+    background-image: linear-gradient(to right, #740404, #66000000);
+    width: auto;
+	height: auto;
+	padding: 2px;
+	color: #fff;
+	font-size: 14px;
+	font-family: selow;
+	text-align: center;
+	float: left;
+    margin-top: 5px;
+    border-left: 2px solid #BE120E;
+}
+.item-content-description-ungu {
+    background-image: linear-gradient(to right, #7C1464, #66000000);
+    width: auto;
+	height: auto;
+	padding: 2px;
+	color: #fff;
+	font-size: 14px;
+	font-family: selow;
+	text-align: center;
+	float: left;
+    margin-top: 5px;
+    border-left: 2px solid #B12D99;
+}
+.item-content-description-biru {
+    background-image: linear-gradient(to right, #491D77, #66000000);
+    width: auto;
+	height: auto;
+	padding: 2px;
+	color: #fff;
+	font-size: 14px;
+	font-family: selow;
+	text-align: center;
+	float: left;
+    margin-top: 5px;
+    border-left: 2px solid #6A2AAC;
+}
+.item-content-img {
+	background: url(../img/bg-item.jpg) no-repeat center center;
+    background-size: 100% 100%;
+	width: 68px;
+	height: 68px;
+	margin-right: 10px;
+	border: 1px solid;
+	border: 1px solid #fff;
+	float: left;
+}
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.item-content img {
+    --angle: 360deg;
+    border-image: linear-gradient(var(--angle), #00c4de, #1b56ff, #00c4de, #1b56ff) 1;
+    animation: 1s rotate linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 0deg;
+    }
+}
+.item-content button {
+    /* Background — Pure CSS (image ki jagah) */
+    background: linear-gradient(180deg, #1a8fe8 0%, #0d6fd8 45%, #0657c8 100%);
+    
+    width: 95px;
+    height: auto;
+    margin-top: -10px;
+    padding-top: 6px;
+    padding: 2px;
+    padding-bottom: 2px;
+    color: #fff;
+    font-size: 16px;
+    font-family: selow;
+    font-weight: 500;
+    text-align: left;
+    border: none;
+    border-top: 0px !important;
+    outline: none;
+    float: right;
+    border-radius: 3px;
+    
+    /* 3D Depth — image jaisa effect */
+    box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -1px 0 rgba(0,0,0,0.2),
+        0 1px 2px rgba(0,0,0,0.15);
+}
+.item-content button img {
+	background: none;
+	width: 25px;
+	height: 25px;
+	margin-right: 20px;
+	border: none !important;
+	float: left;
+}
+
+.section-login-id-boxz {
+	width: 100%;
+	height: auto;
+	padding: 20px;
+}
+.section-login-id-boxz-text {
+	width: 100%;
+	height: auto;
+	padding: 20px;
+	text-align: center;
+	font-size: 18px;
+	font-family: selow;
+	font-weight: 500;
+	color: #fff;
+}
+.section-login-id-boxz-des {
+	width: 100%;
+	height: auto;
+	padding: 20px;
+	text-align: center;
+	font-size: 15px;
+	font-family: selow;
+	font-weight: 500;
+	color: #fff;
+}
+.section-login-id-boxz img {
+	width: 100px;
+	margin-left: 35%;
+	margin-top: 8%;
+	margin-bottom: 15%;
+}
+.section-login-id-boxz button {
+	background: rgb(1,189,223);
+    background: linear-gradient(173deg, rgba(1,189,223,1) 0%, rgba(10,156,234,1) 45%, rgba(25,90,253,1) 100%);
+    background-size: 100% 100%;
+	width: auto;
+	height: auto;
+	color: #000;
+	font-size: 18px;
+	font-family: selow;
+	font-weight: 500;
+	text-align: center;
+	border: none;
+	outline: none;
+	display: block;
+	border-radius:8px;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+}
+
+.event-img {
+	width: 88%;
+	margin-left: 5.8%;
+	animation: bounce .0s infinite alternate;
+}
